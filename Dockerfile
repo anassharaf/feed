@@ -21,7 +21,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 COPY . /app
 
 # Install project dependencies
-RUN composer install --no-dev --optimize-autoloader
+RUN composer install
 
 # Set the database connection environment variables
 ENV DB_CONNECTION=sqlite
