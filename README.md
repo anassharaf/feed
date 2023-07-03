@@ -1,40 +1,79 @@
-<a href="https://supportukrainenow.org/"><img src="https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg" width="100%"></a>
+# Coding Task – Data Feed
 
-------
+## Introduction
+This is a command-line program built with Laravel Zero that processes an XML file and pushes the data to a database. The program is designed to be easily extendable and configurable, allowing different data storage options. It also includes error logging and testing capabilities.
 
-<p align="center">
-    <img title="Laravel Zero" height="100" src="https://raw.githubusercontent.com/laravel-zero/docs/master/images/logo/laravel-zero-readme.png" />
-</p>
+## Getting Started
+Follow the instructions below to set up and run the program.
 
-<p align="center">
-  <a href="https://github.com/laravel-zero/framework/actions"><img src="https://github.com/laravel-zero/laravel-zero/actions/workflows/tests.yml/badge.svg" alt="Build Status"></img></a>
-  <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://img.shields.io/packagist/dt/laravel-zero/framework.svg" alt="Total Downloads"></a>
-  <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://img.shields.io/packagist/v/laravel-zero/framework.svg?label=stable" alt="Latest Stable Version"></a>
-  <a href="https://packagist.org/packages/laravel-zero/framework"><img src="https://img.shields.io/packagist/l/laravel-zero/framework.svg" alt="License"></a>
-</p>
+### Prerequisites
+- PHP 8.1 or higher
+- Composer (https://getcomposer.org/)
+- Docker (optional)
 
-<h4> <center>This is a <bold>community project</bold> and not an official Laravel one </center></h4>
+### Installation
 
-Laravel Zero was created by [Nuno Maduro](https://github.com/nunomaduro) and [Owen Voke](https://github.com/owenvoke), and is a micro-framework that provides an elegant starting point for your console application. It is an **unofficial** and customized version of Laravel optimized for building command-line applications.
+#### Option 1: Using Composer (without Docker)
+1. Clone the repository:
+   ```shell
+   git clone https://github.com/anassharaf/feed.git
+2. Navigate to the project directory:
+   ```shell
+   cd feed
+3. Install dependencies:
+   ```shell
+   composer install
+#### Option 2: Using Docker (with Dockerfile)
+1. Clone the repository:
+   ```shell
+   git clone https://github.com/anassharaf/feed.git
+2. Navigate to the project directory:
+   ```shell
+   cd feed
+3. Build the Docker image:
+   ```shell
+   docker build -t feed .
 
-- Built on top of the [Laravel](https://laravel.com) components.
-- Optional installation of Laravel [Eloquent](https://laravel-zero.com/docs/database/), Laravel [Logging](https://laravel-zero.com/docs/logging/) and many others.
-- Supports interactive [menus](https://laravel-zero.com/docs/build-interactive-menus/) and [desktop notifications](https://laravel-zero.com/docs/send-desktop-notifications/) on Linux, Windows & MacOS.
-- Ships with a [Scheduler](https://laravel-zero.com/docs/task-scheduling/) and  a [Standalone Compiler](https://laravel-zero.com/docs/build-a-standalone-application/).
-- Integration with [Collision](https://github.com/nunomaduro/collision) - Beautiful error reporting
+### Configuration
+The program can be configured using the `.env` file.
 
-------
+Database Configuration
+To configure the database connection, update the following environment variables in the `.env` file:
 
-## Documentation
+```
+DB_CONNECTION=sqlite
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=feeding
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-For full documentation, visit [laravel-zero.com](https://laravel-zero.com/).
+>**Note**: If you choose to use MySQL instead of SQLite, update the `DB_CONNECTION` value to `mysql` and provide the appropriate MySQL database credentials.
 
-## Support the development
-**Do you like this project? Support it by donating**
+### Usage
+1. Run database migrations:
+```
+php feed migrate
+```
+2. Parse the XML file and push the data to the database:
+```
+php feed process:feed
+```
+>**Note**:  If you want to parse feed.xml file from another path, write the path after the command:
+```
+php feed process:feed <your_file_path>
+```
 
-- PayPal: [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=66BYDWAT92N6L)
-- Patreon: [Donate](https://www.patreon.com/nunomaduro)
+### Testing
+To run the tests, make sure you have set up the testing database configuration in the `.env` file. Then, run the migration for testing database:
+```
+php feed migrate --database=testing
+```
+Then, run the following command:
+```
+php feed test
+```
 
-## License
-
-Laravel Zero is an open-source software licensed under the MIT license.
+### Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
