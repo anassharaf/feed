@@ -1,0 +1,8 @@
+[2023-07-02 18:23:48] development.WARNING: Creation of dynamic property Tests\Feed\FeedTest::$xml is deprecated in C:\Users\anass\Desktop\Kaufland\feed\tests\Feed\FeedTest.php on line 24  
+[2023-07-02 18:23:48] development.WARNING: Creation of dynamic property Tests\Feed\FeedTest::$preparationService is deprecated in C:\Users\anass\Desktop\Kaufland\feed\tests\Feed\FeedTest.php on line 25  
+[2023-07-02 18:24:14] development.WARNING: Creation of dynamic property Tests\Feed\FeedTest::$xml is deprecated in C:\Users\anass\Desktop\Kaufland\feed\tests\Feed\FeedTest.php on line 24  
+[2023-07-02 18:24:14] development.WARNING: Creation of dynamic property Tests\Feed\FeedTest::$preparationService is deprecated in C:\Users\anass\Desktop\Kaufland\feed\tests\Feed\FeedTest.php on line 25  
+[2023-07-02 18:24:40] development.WARNING: Creation of dynamic property Tests\Feed\FeedTest::$xml is deprecated in C:\Users\anass\Desktop\Kaufland\feed\tests\Feed\FeedTest.php on line 24  
+[2023-07-02 18:24:40] development.WARNING: Creation of dynamic property Tests\Feed\FeedTest::$preparationService is deprecated in C:\Users\anass\Desktop\Kaufland\feed\tests\Feed\FeedTest.php on line 25  
+[2023-07-02 18:24:40] development.WARNING: Creation of dynamic property Tests\Feed\FeedTest::$xml is deprecated in C:\Users\anass\Desktop\Kaufland\feed\tests\Feed\FeedTest.php on line 24  
+[2023-07-02 18:24:40] development.WARNING: Creation of dynamic property Tests\Feed\FeedTest::$preparationService is deprecated in C:\Users\anass\Desktop\Kaufland\feed\tests\Feed\FeedTest.php on line 25  
